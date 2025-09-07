@@ -1,0 +1,20 @@
+<table class="bg-white shadow-md rounded w-full">
+  <thead>
+    <tr>
+      <th class="text-left py-2 px-4">Name</th>
+      <th class="text-left py-2 px-4">Heading</th>
+      <th class="text-left py-2 px-4">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td class="py-2 px-4"><%= course["name"] %></td>
+        <td class="py-2 px-4"><%= course["heading"] %></td>
+        <td class="py-2 px-4">
+          <%= link_to 'View', course_path(course["id"]), class: "text-blue-500 hover:underline", data: { turbo_method: :get } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

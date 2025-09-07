@@ -1,0 +1,13 @@
+<%# locals: (user:) %>
+<%= turbo_frame_tag "user" do %>
+  <div class="grid grid-cols-2 gap-2 mb-5">
+    <div class="col-span-1">
+      <dt class="text-sm font-medium">User name</dt>
+      <dd class="text-gray-500"><%= user["name"] %></dd>
+    </div>
+    <div class="col-span-1">
+      <dt class="text-sm font-medium">User email</dt>
+      <dd class="text-gray-500"><%= user["email"] %></dd>
+    </div>
+  </div>
+<% end %>

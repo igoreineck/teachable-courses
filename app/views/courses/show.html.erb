@@ -1,0 +1,15 @@
+<% @enrollments.each do |enrollment| %>
+  <div class="bg-white border border-gray-200 rounded-lg mb-5 p-5">
+    <%= turbo_frame_tag "user", src: fetch_user_courses_path(user_id: enrollment["user_id"]) %>
+    <div class="grid grid-cols-2 gap-2">
+      <div class="col-span-1">
+        <dt class="text-sm font-medium">Enrolled at</dt>
+        <dd class="text-gray-500"><%= Time.parse(enrollment["enrolled_at"]).strftime("%B %d, %Y") %></dd>
+      </div>
+      <div class="col-span-1">
+        <dt class="text-sm font-medium">Expires at</dt>
+        <dd class="text-gray-500"><%= enrollment["expires_at"] || "-" %></dd>
+      </div>
+    </div>
+  </div>
+<% end %>
