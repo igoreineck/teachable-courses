@@ -15,7 +15,8 @@ class CoursesController < ApplicationController
 
   def fetch_user
     data = Teachable::ApiAdapter.fetch_user(user_id: params[:user_id])
+    @user = data[:user]
 
-    render partial: "courses/user", locals: { user: data[:user] }
+    render partial: "courses/user", locals: { user: @user }
   end
 end

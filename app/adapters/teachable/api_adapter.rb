@@ -3,7 +3,7 @@ require "net/http"
 
 module Teachable
   class ApiAdapter
-    BASE_API_URL = "https://developers.teachable.com/v1"
+    BASE_API_URL = "https://developers.teachable.com/v1".freeze
 
     def self.fetch_published_courses
       url = URI("#{BASE_API_URL}/courses?is_published=true")
